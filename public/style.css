@@ -75,3 +75,10 @@ footer {
   
   .show {display: block;}
 
+  .usersty{
+    padding: 100px;
+  }
+
+.passwor{
+  padding: 50px;
+}
