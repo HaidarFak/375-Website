@@ -79,6 +79,35 @@ footer {
     padding: 100px;
   }
 
-.passwor{
-  padding: 50px;
+.container {
+   display: inline-flex;
+   flex: 1;
+   width: 100rem;
+   gap: 0.5rem;
+   padding: 0.5rem;
+   border-radius: 6px;
+   background: #061727;
+   
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container div{
+  width: 5rem;
+  height: 10rem;
+  flex-grow: 1;
+  transition: all 0.3s;
+  border-radius: 6px;
+}
+
+.container div:hover {
+  flex: 5;
+}
+
+.container div:nth-child(odd){
+  background: #605DFF;
+}
+
+.container div:nth-child(even){
+  background: #F2BE4E;
 }
