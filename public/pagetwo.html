@@ -14,25 +14,29 @@
   <body>
     <main>
         <form >
-          <input class="usersty" type="text" name="User title"> 
+          <input class="usersty" name="User Story" placeholder="Enter your user story here..." ></textarea>
           <div class="wrapper">
             <div class="container">
-              <div>0</div>
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>5</div>
-              <div>8</div>
-              <div>13</div>
-              <div>21</div>
-              <div>34</div>
-              <div>55</div>
-              <div>89</div>
-              <div>?</div>
-              <div>☕</div>
+              <div data-value="1">1</div>
+              <div data-value="2">2</div>
+              <div data-value="3">3</div>
+              <div data-value="5">5</div>
+              <div data-value="8">8</div>
+              <div data-value="13">13</div>
+              <div data-value="21">21</div>
+              <div data-value="34">34</div>
+              <div data-value="55">55</div>
+              <div data-value="89">89</div>
+              <div data-value="?">?</div>
+              <div data-value="☕">☕</div>
           </div>
           </div>
-        
+        <section class="results">
+          <h2> Calculated Average: </h2>
+          <div id = "average-display">Waiting for votes...</div>
+          </section>
+
+          <button id="restart-button">Restart</button>
         </form>
     </main>
     <script src="index.js"></script>

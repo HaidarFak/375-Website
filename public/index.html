@@ -13,21 +13,22 @@
     <main>
         <p>Please choose number of developers</p>
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <button onclick="toggleDropdown()" class="dropbtn">Choose Developers</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="#">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <a href="#">6</a>
-              <a href="#">7</a>
-              <a href="#">8</a>
-              <a href="#">9</a>
-              <a href="#">10</a>
+              <a href="#" data-value="1">1</a>
+              <a href="#" data-value="2">2</a>
+              <a href="#" data-value="3">3</a>
+              <a href="#" data-value="4">4</a>
+              <a href="#" data-value="5">5</a>
+              <a href="#" data-value="6">6</a>
+              <a href="#" data-value="7">7</a>
+              <a href="#" data-value="8">8</a>
+              <a href="#" data-value="9">9</a>
+              <a href="#" data-value="10">10</a>            
             </div>
             <div>
-                <a href="pagetwo.html"><button>nextpage</button></a>
+                <p id="developer-count-display">Number of Developers: 0</p>
+                <a href="pagetwo.html"><button>Start Session</button></a>
             </div>
     </main>
     <footer>
