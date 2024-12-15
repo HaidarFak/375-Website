@@ -41,20 +41,21 @@ window.onload = function(){
 // Voting functions
 let votes = [];
 let numVotes = 0;
+let numberOfDevelopers = 1;
 
 const numOfDevelopers = parseInt(localStorage.getItem("numOfDevelopers"), 10);
 
 document.querySelectorAll('.container div').forEach(item => {
   item.addEventListener('click', function(event) {
-    if (numVotes >= numOfDevelopers){
-      alert("Voting session completed!");
-      return;
-    }
-
     const vote = event.target.getAttribute('data-value');
     votes.push(vote);
     numVotes++;
-    if (numVotes === numOfDevelopers){
+    
+    if(numOfDevelopers > numVotes){
+      alert("Voter number " + (numVotes + 1) + "'s turn.")
+    }
+
+    if (numVotes == numOfDevelopers){
       calculateAvg();
     }
   });
@@ -67,7 +68,14 @@ function calculateAvg(){
     const sum = validVotes.reduce((acc,curr) => acc + curr, 0);
     const average = sum / validVotes.length;
     document.getElementById('average-display').textContent = average.toFixed(2);
+
+    if(!Number.isInteger(average)){
+      alert("Voting Complete, The number is a decmial, There is a disagreement");
+    } else {
+      alert("Everyone agrees on the number");
+    }
   }
+
 }
 
 // Restart session
