@@ -104,7 +104,6 @@ footer {
   box-sizing: border-box;
 }
 
-
 .container div{
   width: 7rem;
   height: 5rem;
@@ -122,11 +121,6 @@ footer {
   cursor: pointer;
 }
 
-
-.container div:hover {
-  background: #4F4Dff;
-}
-
 .container div:nth-child(odd){
   background: #605DFF;
 }
@@ -134,3 +128,21 @@ footer {
 .container div:nth-child(even){
   background: #F2BE4E;
 }
+
+.clicked-animation {
+  animation: scale-up 0.3s ease-in-out;
+
+}
+
+#restart-button{
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
