@@ -42,6 +42,7 @@ window.onload = function(){
 let votes = [];
 let numVotes = 0;
 let numberOfDevelopers = 1;
+let questionMarkVotes = 0;
 
 const numOfDevelopers = parseInt(localStorage.getItem("numOfDevelopers"), 10);
 
@@ -51,10 +52,15 @@ document.querySelectorAll('.container div').forEach(item => {
     votes.push(vote);
     numVotes++;
     
+    if(votes === '?'){
+      questionMarkVotes++;
+    }
+
     if(numOfDevelopers > numVotes){
       alert("Voter number " + (numVotes + 1) + "'s turn.")
     }
 
+    
     if (numVotes == numOfDevelopers){
       calculateAvg();
     }
@@ -64,6 +70,7 @@ document.querySelectorAll('.container div').forEach(item => {
 // Calculate the average votes
 function calculateAvg(){
   const validVotes = votes.filter(vote => !isNaN(vote)).map(Number);
+
   if (validVotes.length > 0){
     const sum = validVotes.reduce((acc,curr) => acc + curr, 0);
     const average = sum / validVotes.length;
@@ -76,12 +83,20 @@ function calculateAvg(){
     }
   }
 
+  if (questionMarkVotes > 0) {
+    document.getElementById('mark-display').textContent = 
+      `"?" was chosen ${questionMarkVotes} ${questionMarkVotes === 1 ? 'time' : 'times'}`;
+    alert(`The "?" option was chosen ${questionMarkVotes} ${questionMarkVotes === 1 ? 'time' : 'times'}.`);
+  }
+
 }
 
 // Restart session
 document.getElementById('restart-button').addEventListener('click', function(){
   votes = [];
   numVotes = 0;
+  questionMarkVotes = 0;
   document.getElementById('average-display').textContent = "Waiting for votes...";
+  document.getElementById('mark-display').textContent = "";
   console.log("Voting session restarted");
 });
